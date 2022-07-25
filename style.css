@@ -4,13 +4,20 @@
   font-size: 62.5%;
 }
 
+:root {
+  --dark-pink-button: rgba(166, 30, 77, 1);
+  --dark-blue-button: #000542;
+  --light-blue-button: #6e6ba7;
+  --light-pink-button: rgba(214, 51, 108, 0.705);
+}
+
 div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: calc(100% - 12%);
+  width: 100vw;
 }
 
 footer {
@@ -50,6 +57,10 @@ div h1 {
 }
 
 div p {
+  font-size: 1.4rem;
+}
+
+div p strong {
   font-size: 1.4rem;
 }
 
@@ -94,12 +105,13 @@ ul li {
   justify-content: center;
 }
 
-body {
+.light-blue {
   display: flex;
   justify-content: space-between;
   background: rgb(217, 224, 241);
   margin: 0%;
   display: flex;
+  color: #000542;
 }
 
 .dark-blue {
@@ -157,14 +169,13 @@ body {
   border: none;
 }
 
-select {
-  width: fit-content;
-  margin: 3%;
-  font-size: 1.6rem;
-}
-
 section {
-  margin: 1%;
+  margin: 15%;
+  display: flex;
+  font-size: 1.6rem;
+  position: absolute;
+  right: -10%;
+  top: -25%;
 }
 
 main {
@@ -216,7 +227,7 @@ main {
   justify-content: space-between;
   align-items: center;
   border-radius: 40px;
-  background-color: #475569;
+  background-color: #6e6ba7;
 }
 
 .switch .switch-wrapper input {
@@ -238,9 +249,32 @@ main {
 }
 
 .switch .switch-wrapper input:checked + .switch-button {
-  background-color: #58a721;
+  background-color: #000542;
 }
 
 .switch .switch-wrapper input:checked + .switch-button::before {
-  transform: translateX(26px);
+  transform: translateX(27px);
+}
+
+button {
+  background-color: var(--dark-blue-button);
+  opacity: 1;
+  border: none;
+  margin: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  padding: 2%;
+  border-radius: 0.8rem;
+  color: var(--light-blue-button);
+  font-size: 1.4rem;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
 }
