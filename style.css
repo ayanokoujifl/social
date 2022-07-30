@@ -7,7 +7,7 @@
 :root {
   --dark-pink-button: rgba(166, 30, 77, 1);
   --dark-blue-button: #000542;
-  --light-blue-button: #6e6ba7;
+  --light-blue-button: #4264eb /*#6e6ba7*/;
   --light-pink-button: rgba(214, 51, 108, 0.705);
 }
 
@@ -42,7 +42,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
-  border: 0.3rem solid rgba(66, 99, 235, 1);
+  border: 0.3rem solid #4264eb;
   padding: 0.3%;
 }
 
@@ -277,4 +277,38 @@ section {
   align-items: center;
   text-align: center;
   width: 30%;
+}
+
+#selector {
+  width: 10%;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 1.6rem;
+  border-radius: 3.5rem;
+  padding: 0.4rem 0.2rem 0.4rem 0.3rem;
+  color: #fff;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+select option {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.light-blue #selector {
+  background-color: var(--dark-blue-button);
+}
+
+.dark-blue #selector {
+  background-color: var(--light-blue-button);
+}
+
+.light-pink #selector {
+  background-color: var(--dark-pink-button);
+}
+.dark-pink #selector {
+  background-color: var(--light-pink-button);
 }
