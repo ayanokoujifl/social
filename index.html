@@ -14,13 +14,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-
+    <script src="https://unpkg.com/phosphor-icons"></script>
     <title>Redes sociais</title>
   </head>
   <body class="light-blue">
     <script src="./script.js" defer></script>
     <nav>
-      <p>Temas de cores</p>
+      <div id="theme-indicator">
+        <p>Temas de cores</p>
+        <i class="ph-arrow-bend-right-down-bold"></i>
+      </div>
       <select id="selector" onchange="mudaCor()">
         <option class="button-light-blue">Light-blue</option>
         <option class="button-dark-blue">Dark-blue</option>

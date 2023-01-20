@@ -259,7 +259,6 @@ nav > p {
 }
 
 nav select {
-  margin-top: 16px;
   color: #eee;
   font-size: 12px;
   border-radius: 8px;
@@ -281,4 +280,14 @@ nav select {
 .light-pink nav select,
 .dark-pink nav select {
   outline: #a61e4d 2px solid;
+}
+
+#theme-indicator {
+  display: flex;
+  margin: 0;
+  flex-direction: row;
+}
+
+.ph-arrow-bend-right-down-bold {
+  zoom: 250%;
 }
