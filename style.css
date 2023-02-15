@@ -229,6 +229,16 @@ select option {
   color: #fff;
 }
 
+#selector {
+  appearance: none;
+  padding-right: 24px;
+  text-align: center;
+  background: url('./assets/arrowDownsvg.svg') right #fff;
+  background-size: 16%;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+}
+
 .light-blue #selector {
   background-color: var(--dark-blue-button);
 }
@@ -290,4 +300,32 @@ nav select {
 
 .ph-arrow-bend-right-down-bold {
   zoom: 250%;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+i {
+  font-size: 160%;
+}
+
+a p {
+  margin: 0;
+}
+
+.light-blue ul li a:hover i,
+.dark-blue ul li a:hover i,
+.light-blue ul li a:hover p,
+.dark-blue ul li a:hover p {
+  color: #000542;
+}
+
+.light-pink ul li a:hover i,
+.dark-pink ul li a:hover i,
+.light-pink ul li a:hover p,
+.dark-pink ul li a:hover p {
+  color: #380215;
 }
