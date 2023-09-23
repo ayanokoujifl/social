@@ -20,23 +20,16 @@
     <script src="https://unpkg.com/phosphor-icons"></script>
     <title>Redes sociais</title>
   </head>
-  <body class="light-blue">
+  <body class="light">
     <script src="./script.js" defer></script>
-    <nav>
-      <div id="theme-indicator">
-        <p>Escolha um tema</p>
-        <i class="ph-arrow-bend-right-down-bold"></i>
-      </div>
-      <select id="selector" onchange="mudaCor()">
-        <option class="button-light-blue">Azul claro</option>
-        <option class="button-dark-blue">Azul escuro</option>
-        <option class="button-light-pink">Rosa claro</option>
-        <option class="button-dark-pink">Rosa escuro</option>
-      </select>
-    </nav>
+    <label>
+      <input type="checkbox" onclick="changeColor()" />
+      <span class="slider"></span>
+    </label>
     <div>
       <img src="https://github.com/ayanokoujifl.png" alt="" />
       <h1>Luís Gustavo Ferreira Leite</h1>
+      <p>@dev_atomic_Journey</p>
       <ul>
         <li>
           <a href="https://wa.me/5538997569902" target="_blank">
@@ -45,7 +38,7 @@
           </a>
         </li>
         <li>
-          <a href="https://instagram.com/luis_gustavo_dev" target="_blank">
+          <a href="https://instagram.com/dev_atomic_Journey" target="_blank">
             <i class="ph-instagram-logo-bold" id="instagram"></i>
             <p>INSTAGRAM</p>
           </a>

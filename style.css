@@ -1,20 +1,72 @@
 * {
   box-sizing: border-box;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-size: 62.5%;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-  --dark-pink-button: #a61e4d;
-  --dark-blue-button: #000542;
-  --light-blue-button: #4264eb /*#6e6ba7*/;
-  --light-pink-button: #d6336cb4;
+  --dark-button: #1c3b62;
+  --light-button: #20c8d3;
 }
 
 body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  margin: 12px;
+  transition: 100ms ease-in;
+}
+
+.light {
+  background-color: #d3d3d3;
+}
+
+.dark {
+  background-color: #3d3d3d;
+  color: #fff;
+}
+
+label {
+  width: 48px;
+  height: 24px;
+  background-color: #3d3d3d;
+  border-radius: 9999px;
+  position: absolute;
+  top: 1.5rem;
+  right: 2%;
+}
+
+.dark label {
+  background-color: #d3d3d3;
+}
+
+label input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 28px;
+  background-color: var(--light-button);
+  height: 28px;
+  border-radius: 9999px;
+  background-image: url("./IconAtomic.png");
+  background-position: center center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  transition: 200ms all ease;
+}
+
+input:checked ~ .slider {
+  left: 22px;
+  background-color: var(--dark-button);
 }
 
 div {
@@ -50,8 +102,12 @@ img {
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
-  border: 0.3rem solid #4264eb;
+  border: 0.4rem solid var(--light-button);
   padding: 0.3%;
+}
+
+.dark img {
+  border: 0.4rem solid var(--dark-button);
 }
 
 div h1 {
@@ -78,7 +134,7 @@ ul li a {
   justify-items: center;
   text-align: center;
   text-transform: uppercase;
-  background: rgba(66, 99, 235, 1);
+  background: var(--light-button);
   color: rgba(255, 255, 255, 1);
   padding: 1.6rem 8rem;
   align-items: center;
@@ -93,6 +149,14 @@ ul li a {
   letter-spacing: 0.4vmax;
 }
 
+.dark ul li a {
+  background-color: var(--dark-button);
+}
+
+.dark ul li a:hover {
+  background-color: #0d294b;
+}
+
 ul {
   width: fit-content;
   margin-left: auto;
@@ -101,7 +165,7 @@ ul {
 }
 
 ul li a:hover {
-  background-color: rgba(54, 79, 199, 1);
+  background-color: #14a0ad;
 }
 
 ul li {
@@ -111,59 +175,6 @@ ul li {
   margin: 1rem;
   align-items: center;
   justify-content: center;
-}
-
-.light-blue {
-  display: flex;
-  justify-content: space-between;
-  background: rgb(217, 224, 241);
-  margin: 0%;
-  display: flex;
-  color: #000542;
-}
-
-.dark-blue {
-  background-color: rgba(0, 8, 47, 1);
-  color: #fff;
-}
-
-.dark-blue div ul li a {
-  background-color: rgba(66, 99, 235, 1);
-}
-
-.dark-blue div ul li a:hover {
-  background-color: rgba(54, 79, 199, 1);
-}
-
-.dark-pink {
-  background-color: rgba(31, 0, 11, 1);
-  color: #fff;
-}
-.dark-pink div ul li a {
-  background-color: rgb(214, 51, 108);
-}
-.dark-pink div ul li a:hover {
-  background-color: rgba(166, 30, 77, 1);
-}
-
-.dark-pink div img {
-  border: 0.3rem solid rgba(214, 51, 108, 1);
-}
-
-.light-pink {
-  background-color: rgba(255, 240, 246, 1);
-  color: rgba(31, 0, 11, 1);
-}
-
-.light-pink div ul li a {
-  background-color: rgba(214, 51, 108, 1);
-}
-.light-pink div ul li a:hover {
-  background-color: rgba(166, 30, 77, 1);
-}
-
-.light-pink div img {
-  border: 0.3rem solid rgba(214, 51, 108, 1);
 }
 
 .icon {
@@ -196,7 +207,7 @@ main {
   right: 2%;
   top: 0%;
   padding-top: 3%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: fit-content;
 }
 
@@ -223,84 +234,6 @@ section {
   width: 30%;
 }
 
-select option {
-  font-size: 1.6rem;
-  color: #fff;
-}
-
-#selector {
-  appearance: none;
-  padding-right: 24px;
-  text-align: center;
-  background: url('./assets/arrowDownsvg.svg') right #fff;
-  background-size: 16%;
-  background-repeat: no-repeat;
-  background-position-x: 95%;
-}
-
-.light-blue #selector {
-  background-color: var(--dark-blue-button);
-}
-
-.dark-blue #selector {
-  background-color: var(--light-blue-button);
-}
-
-.light-pink #selector {
-  background-color: var(--dark-pink-button);
-}
-.dark-pink #selector {
-  background-color: var(--light-pink-button);
-}
-
-nav {
-  width: 100vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-nav > p {
-  font-size: 16px;
-  margin: 0;
-}
-
-nav select {
-  color: #eee;
-  font-size: 12px;
-  border-radius: 8px;
-  padding: 4px;
-  border: none;
-  outline-offset: 2px;
-  -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.88);
-  box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.88);
-}
-
-.dark-blue nav select {
-  outline: #4264eb 2px solid;
-}
-
-.light-blue nav select {
-  outline: #000542 2px solid;
-}
-
-.light-pink nav select,
-.dark-pink nav select {
-  outline: #a61e4d 2px solid;
-}
-
-#theme-indicator {
-  display: flex;
-  margin: 0;
-  flex-direction: row;
-}
-
-.ph-arrow-bend-right-down-bold {
-  zoom: 250%;
-}
-
 ul li a {
   display: flex;
   justify-content: center;
@@ -313,18 +246,4 @@ i {
 
 a p {
   margin: 0;
-}
-
-.light-blue ul li a:hover i,
-.dark-blue ul li a:hover i,
-.light-blue ul li a:hover p,
-.dark-blue ul li a:hover p {
-  color: #000542;
-}
-
-.light-pink ul li a:hover i,
-.dark-pink ul li a:hover i,
-.light-pink ul li a:hover p,
-.dark-pink ul li a:hover p {
-  color: #380215;
 }
